@@ -17,29 +17,28 @@
                 <h4>SEÇÕES</h4>
                 <ul>
                     <li><a href="/">Página Inicial</a></li>
-                    <li><a href="/">Cadastro de Imóvel</a></li>
                 </ul>
             </div>
             <div class="_col">
                 <h4>Atendimento</h4>
                 <ul>
-                    <li><a href="/">Centra de Ajuda</a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=5535988326287">Centra de Ajuda</a></li>
                     <li><a href="/">Confiança e Segurança</a></li>
-                    <li><a href="/">Atendimento pelo Telefone</a></li>
-                    <li><a href="/">Atendimento via Email</a></li>
+                    <li><a href="tel:3598832-6287">Atendimento pelo Telefone</a></li>
+                    <li><a href="mailto:contato@casastemporadaalfenas.com.br">Atendimento via Email</a></li>
                 </ul>
             </div>
             <div class="_col">
                 <div class="_socialmedias">
-                    <a href="/">
+                    <a href="https://www.facebook.com/CasasTemporadaAlfenas">
                         <img src="{{ asset('site/img/FacebookLogo.svg') }}" alt="Ícone do Facebook" />
                     </a>
-                    <a href="/">
+                    <a href="https://www.instagram.com/casas_temporada_alfenas/">
                         <img src="{{ asset('site/img/InstagramLogo.svg') }}" alt="Ícone do Facebook" />
                     </a>
-                    <a href="/">
+                    {{-- <a href="/">
                         <img src="{{ asset('site/img/TwitterLogo.svg') }}" alt="Ícone do Facebook" />
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </div>
@@ -49,3 +48,5 @@
         </div>
     </div>
 </footer>
+
+

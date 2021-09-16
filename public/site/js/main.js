@@ -5,12 +5,15 @@ $('a[href*="#"]')
     .click(function (event) {
         // On-page links
         if (
-            location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") &&
+            location.pathname.replace(/^\//, "") ==
+                this.pathname.replace(/^\//, "") &&
             location.hostname == this.hostname
         ) {
             // Figure out element to scroll to
             var target = $(this.hash);
-            target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+            target = target.length
+                ? target
+                : $("[name=" + this.hash.slice(1) + "]");
             // Does a scroll target exist?
             if (target.length) {
                 // Only prevent default if animation is actually gonna happen
@@ -45,6 +48,8 @@ $(document).ready(() => {
         },
         1500
     );
+
+    $("select[name='pesquisa-casa'").select2();
 });
 
 $("._buttons ._next").click(function () {
@@ -60,4 +65,8 @@ $("._buttons ._back").click(function () {
 $(".s_details .container-fav ._showcase img").click((e) => {
     if (document.fullscreenElement == null) e.target.requestFullscreen();
     else document.exitFullscreen();
+});
+
+$('button[name="toWhats"]').click(() => {
+    window.open("https://api.whatsapp.com/send?phone=5535988326287&text=");
 });

@@ -6,7 +6,7 @@
             <div class="_logo">
                 <img src="{{ asset('site/img/_logo85.png') }}" alt="Logo Casas Temporada" />
             </div>
-            <a href="/">
+            <a target="_blank" href="https://api.whatsapp.com/send?phone=5535988326287&text=">
                 <img src="{{ asset('site/img/whatsapp_circle.svg') }}" alt="Whatsapp Button" />
             </a>
         </div>
@@ -26,6 +26,23 @@
             </div>
         </div>
     </section>
+
+    <section class="container-fluid searchbar">
+        <div class="container-fav">
+            <select class="js-example-basic-single" name="pesquisa-casa">
+                <option value="">Encontrar casa</option>
+                <option value="2323">Casa 2323</option>
+                <option value="2323">Casa 2323</option>
+                <option value="2323">Casa 2323</option>
+                <option value="2323">Casa 2323</option>
+              </select>
+
+              <picture for="pesquisa-casa">
+                  <img src="{{ asset('site/img/search.svg') }}" alt="">
+              </picture>
+        </div>
+    </section>
+
 
     <section class="container-fluid s_topfive">
         <div class="container-fav">
@@ -318,6 +335,7 @@
     <script src="{{ asset('site/js/jquery-ui.js') }}"></script>
 
     <script src="{{ asset('site/js/main.js') }}"></script>
+    <script src="{{ asset('admin/libs/select2/js/select2.min.js') }}"></script>
 </body>
 
 </html>

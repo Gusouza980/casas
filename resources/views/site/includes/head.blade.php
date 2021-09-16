@@ -18,9 +18,12 @@
 
     <link rel="shortcut icon" href="favicon.ico" />
 
+    <link rel="preload" href="{{ asset('admin/libs/select2/js/select2.min.css') }}" as="style" />
     <link rel="preload" href="{{ asset('site/css/style.css') }}" as="style" />
     <link rel="preload" href="{{ asset('site/js/main.js') }}" as="script" />
+    <link rel="preload" href="{{ asset('admin/libs/select2/css/select2.min.js') }}" as="script" />
 
+    <link rel="stylesheet" href="{{ asset('admin/libs/select2/css/select2.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('site/css/style.css') }}" />
 
     <title>Casas Temporada ~ Aguarde</title>

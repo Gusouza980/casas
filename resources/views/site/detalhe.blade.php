@@ -106,11 +106,11 @@
                         <div class="_pic">
                             <img src="{{ asset('site/img/pic_Corretor.jpg') }}" alt="Pessoa Corretora" />
                         </div>
-                        <span>Tainá Silva</span>
-                        <p>Converse aqui com a hóspede da casa para marcar e negociar o valor.</p>
+                        <span>Raphael Augusto<br> de Lima Barbosa</span>
+                        <p>Converse aqui para marcar e negociar o valor.</p>
                         <span class="_crc"><strong>CRC:</strong> 123124124-214</span>
 
-                        <button>
+                        <button name="toWhats   ">
                             Tenho interesse
                             <div class="_icon">
                                 <img src="{{ asset('site/img/whatsapp_white.svg') }}" alt="" />

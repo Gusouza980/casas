@@ -1,17 +1,23 @@
 header {
-  padding-top: 6.6rem;
-  .container-fav {
-    @include flex(row, center, space-between);
-  }
-  @include responsive(730px) {
-    padding-bottom: 3rem;
-    ._logo {
-      width: 100%;
+    padding-top: 6.6rem;
+    .container-fav {
+        @include flex(row, center, space-between);
 
-      img {
-        margin: 0 auto;
-        height: 8rem;
-      }
+        a {
+            position: fixed;
+            right: 20px;
+            top: 66px;
+        }
     }
-  }
+    @include responsive(730px) {
+        padding-bottom: 3rem;
+        ._logo {
+            width: 100%;
+
+            img {
+                margin: 0 auto;
+                height: 8rem;
+            }
+        }
+    }
 }

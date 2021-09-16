@@ -37,7 +37,7 @@
                         <div class="row">
                             <div class="form-group col-12 col-lg-4">
                                 <label for="">Lista</label>
-                                <select class="form-control" name="" id="">
+                                <select class="form-control" name="lista" id="">
                                     @foreach (config('globals.listas') as $key => $lista)
                                         <option value="{{ $key }}">{{ $lista }}
                                         </option>
@@ -46,7 +46,8 @@
                             </div>
                             <div class="col-12 col-lg-8 py-lg-2 mt-3 mt-lg-0">
                                 <div class="form-check form-check-primary mt-lg-4 mb-2">
-                                    <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                                    <input class="form-check-input" type="checkbox" name="prioridade_lista"
+                                        id="autoSizingCheck">
                                     <label class="form-check-label" for="autoSizingCheck">
                                         Prioridade na Lista
                                     </label>
@@ -150,6 +151,12 @@
                                     </div>
                                 </div>
                             @endfor
+                        </div>
+                        <hr>
+                        <div class="row mt-3">
+                            <div class="form-group col-12 mb-3 text-end">
+                                <button type="submit" class="btn btn-primary px-4">Salvar</button>
+                            </div>
                         </div>
 
                     </form>

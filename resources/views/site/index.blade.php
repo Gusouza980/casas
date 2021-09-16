@@ -31,15 +31,14 @@
         <div class="container-fav">
             <select class="js-example-basic-single" name="pesquisa-casa">
                 <option value="">Encontrar casa</option>
-                <option value="2323">Casa 2323</option>
-                <option value="2323">Casa 2323</option>
-                <option value="2323">Casa 2323</option>
-                <option value="2323">Casa 2323</option>
-              </select>
+                @foreach ($imoveis as $imovel)
+                    <option value="{{ $imovel->id }}">{{ $imovel->nome }} #{{ $imovel->codigo }}</option>
+                @endforeach
+            </select>
 
-              <picture for="pesquisa-casa">
-                  <img src="{{ asset('site/img/search.svg') }}" alt="">
-              </picture>
+            <picture for="pesquisa-casa">
+                <img src="{{ asset('site/img/search.svg') }}" alt="">
+            </picture>
         </div>
     </section>
 
@@ -50,34 +49,39 @@
                 <h2>As 5 mais alugadas</h2>
             </div>
             <div class="_top">
-                <a href="" class="_fivecase">
+                <a href="{{ route('site.detalhe', ['slug' => $configuracao->top1_imovel->slug]) }}"
+                    class="_fivecase">
                     <div class="number">1</div>
                     <div class="_image">
-                        <img src="{{ asset('site/img/topfive_01.jpg') }}" alt="" />
+                        <img src="{{ $configuracao->top1_imovel->imagem1 }}" alt="" />
                     </div>
                 </a>
-                <a href="" class="_fivecase">
+                <a href="{{ route('site.detalhe', ['slug' => $configuracao->top2_imovel->slug]) }}"
+                    class="_fivecase">
                     <div class="number">2</div>
                     <div class="_image">
-                        <img src="{{ asset('site/img/topfive_02.jpg') }}" alt="" />
+                        <img src="{{ $configuracao->top2_imovel->imagem1 }}" alt="" />
                     </div>
                 </a>
-                <a href="" class="_fivecase">
+                <a href="{{ route('site.detalhe', ['slug' => $configuracao->top3_imovel->slug]) }}"
+                    class="_fivecase">
                     <div class="number">3</div>
                     <div class="_image">
-                        <img src="{{ asset('site/img/topfive_03.jpg') }}" alt="" />
+                        <img src="{{ $configuracao->top3_imovel->imagem1 }}" alt="" />
                     </div>
                 </a>
-                <a href="" class="_fivecase">
+                <a href="{{ route('site.detalhe', ['slug' => $configuracao->top4_imovel->slug]) }}"
+                    class="_fivecase">
                     <div class="number">4</div>
                     <div class="_image">
-                        <img src="{{ asset('site/img/topfive_04.jpg') }}" alt="" />
+                        <img src="{{ $configuracao->top4_imovel->imagem1 }}" alt="" />
                     </div>
                 </a>
-                <a href="" class="_fivecase">
+                <a href="{{ route('site.detalhe', ['slug' => $configuracao->top5_imovel->slug]) }}"
+                    class="_fivecase">
                     <div class="number">5</div>
                     <div class="_image">
-                        <img src="{{ asset('site/img/topfive_05.jpg') }}" alt="" />
+                        <img src="{{ $configuracao->top5_imovel->imagem1 }}" alt="" />
                     </div>
                 </a>
             </div>
@@ -87,7 +91,7 @@
     <section class="container-fluid s_list">
         <div class="container-fav">
             <div class="_title">
-                <h2>Ideal pra quem quer aproveitar</h2>
+                <h2>{{ config('globals.listas')[0] }}</h2>
                 <div class="_buttons">
                     <div class="_back">
                         <img src="{{ asset('site/img/arrow_toLeft.svg') }}" alt="" />
@@ -98,42 +102,14 @@
                 </div>
             </div>
             <div class="_cases">
-                <a href="/" class="_case">
-                    <div class="_img">
-                        <img src="{{ asset('site/img/list_case_1.png') }}" alt="" />
-                    </div>
-                    <div class="_name">Lorem Impsum</div>
-                </a>
-                <a href="/" class="_case">
-                    <div class="_img">
-                        <img src="{{ asset('site/img/list_case_1.png') }}" alt="" />
-                    </div>
-                    <div class="_name">Lorem Impsum</div>
-                </a>
-                <a href="/" class="_case">
-                    <div class="_img">
-                        <img src="{{ asset('site/img/list_case_1.png') }}" alt="" />
-                    </div>
-                    <div class="_name">Lorem Impsum</div>
-                </a>
-                <a href="/" class="_case">
-                    <div class="_img">
-                        <img src="{{ asset('site/img/list_case_1.png') }}" alt="" />
-                    </div>
-                    <div class="_name">Lorem Impsum</div>
-                </a>
-                <a href="/" class="_case">
-                    <div class="_img">
-                        <img src="{{ asset('site/img/list_case_1.png') }}" alt="" />
-                    </div>
-                    <div class="_name">Lorem Impsum</div>
-                </a>
-                <a href="/" class="_case">
-                    <div class="_img">
-                        <img src="{{ asset('site/img/list_case_1.png') }}" alt="" />
-                    </div>
-                    <div class="_name">Lorem Impsum</div>
-                </a>
+                @foreach ($imoveis->where('lista', 0)->sortByDesc('prioridade_lista') as $imovel)
+                    <a href="{{ route('site.detalhe', ['slug' => $imovel->slug]) }}" class="_case">
+                        <div class="_img">
+                            <img src="{{ asset($imovel->imagem1) }}" alt="" />
+                        </div>
+                        <div class="_name">{{ $imovel->nome }} #{{ $imovel->codigo }}</div>
+                    </a>
+                @endforeach
             </div>
         </div>
     </section>
@@ -166,61 +142,35 @@
         </div>
     </section>
 
-    <section class="container-fluid s_list">
-        <div class="container-fav">
-            <div class="_title">
-                <h2>Pra quem é mais do campo</h2>
-                <div class="_buttons">
-                    <div class="_back">
-                        <img src="{{ asset('site/img/arrow_toLeft.svg') }}" alt="" />
-                    </div>
-                    <div class="_next">
-                        <img src="{{ asset('site/img/arrow_toRight.svg') }}" alt="" />
+    @for ($i = 1; $i < count(config('globals.listas')); $i++)
+        <section class="container-fluid s_list">
+            <div class="container-fav">
+                <div class="_title">
+                    <h2>{{ config('globals.listas')[$i] }}</h2>
+                    <div class="_buttons">
+                        <div class="_back">
+                            <img src="{{ asset('site/img/arrow_toLeft.svg') }}" alt="" />
+                        </div>
+                        <div class="_next">
+                            <img src="{{ asset('site/img/arrow_toRight.svg') }}" alt="" />
+                        </div>
                     </div>
                 </div>
+                <div class="_cases">
+                    @foreach ($imoveis->where('lista', $i)->sortByDesc('prioridade_lista') as $imovel)
+                        <a href="{{ route('site.detalhe', ['slug' => $imovel->slug]) }}" class="_case">
+                            <div class="_img">
+                                <img src="{{ asset($imovel->imagem1) }}" alt="" />
+                            </div>
+                            <div class="_name">{{ $imovel->nome }} #{{ $imovel->codigo }}</div>
+                        </a>
+                    @endforeach
+                </div>
             </div>
-            <div class="_cases">
-                <a href="/" class="_case">
-                    <div class="_img">
-                        <img src="{{ asset('site/img/list_case_1.png') }}" alt="" />
-                    </div>
-                    <div class="_name">Lorem Impsum</div>
-                </a>
-                <a href="/" class="_case">
-                    <div class="_img">
-                        <img src="{{ asset('site/img/list_case_1.png') }}" alt="" />
-                    </div>
-                    <div class="_name">Lorem Impsum</div>
-                </a>
-                <a href="/" class="_case">
-                    <div class="_img">
-                        <img src="{{ asset('site/img/list_case_1.png') }}" alt="" />
-                    </div>
-                    <div class="_name">Lorem Impsum</div>
-                </a>
-                <a href="/" class="_case">
-                    <div class="_img">
-                        <img src="{{ asset('site/img/list_case_1.png') }}" alt="" />
-                    </div>
-                    <div class="_name">Lorem Impsum</div>
-                </a>
-                <a href="/" class="_case">
-                    <div class="_img">
-                        <img src="{{ asset('site/img/list_case_1.png') }}" alt="" />
-                    </div>
-                    <div class="_name">Lorem Impsum</div>
-                </a>
-                <a href="/" class="_case">
-                    <div class="_img">
-                        <img src="{{ asset('site/img/list_case_1.png') }}" alt="" />
-                    </div>
-                    <div class="_name">Lorem Impsum</div>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    @endfor
 
-    <section class="container-fluid s_list">
+    {{-- <section class="container-fluid s_list">
         <div class="container-fav">
             <div class="_title">
                 <h2>Para refrescar</h2>
@@ -326,7 +276,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     @include('site.includes.footer')
 

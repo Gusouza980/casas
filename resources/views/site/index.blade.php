@@ -32,7 +32,7 @@
             <select class="js-example-basic-single" name="pesquisa-casa">
                 <option value="">Encontrar casa</option>
                 @foreach ($imoveis as $imovel)
-                    <option value="{{ $imovel->id }}">{{ $imovel->nome }} #{{ $imovel->codigo }}</option>
+                    <option value="{{ $imovel->id }}" slug="{{$imovel->slug}}">{{ $imovel->nome }} #{{ $imovel->codigo }}</option>
                 @endforeach
             </select>
 

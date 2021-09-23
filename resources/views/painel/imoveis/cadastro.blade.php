@@ -67,7 +67,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-12 col-lg-12 mb-3">
-                                <label for="subtitulo">Subtítulo</label>
+                                <label for="subtitulo">Endereço</label>
                                 <input type="text" class="form-control" name="subtitulo" id="subtitulo" maxlenght="100">
                             </div>
                         </div>

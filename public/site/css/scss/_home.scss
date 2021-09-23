@@ -1,6 +1,6 @@
 body {
     &.home {
-        background-image: url("/img/header_background.svg");
+        background-image: url("../img/header_background.svg");
         background-position: center 0;
         background-size: cover;
         background-repeat: no-repeat;
@@ -53,17 +53,6 @@ section.s-hero {
 section.s_topfive {
     .container-fav {
         position: relative;
-        &::after {
-            content: "";
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            right: 0;
-            box-shadow: inset 0px 0px 50px 100px rgba(255, 255, 255, 0.54);
-
-            z-index: 3;
-        }
     }
     overflow-x: hidden;
     padding-top: 2rem;
@@ -164,11 +153,11 @@ section.s_list {
             scroll-behavior: smooth;
             gap: 2rem;
             overflow-x: scroll;
-            width: 102%;
+            width: 100%;
             white-space: nowrap;
             ._case {
                 width: 41.4rem;
-                height: 46.5rem;
+                height: 46.6rem;
                 display: inline-block;
                 margin-right: 2rem;
 
@@ -181,6 +170,18 @@ section.s_list {
 
                 &:hover {
                     opacity: 0.7;
+                }
+                ._img {
+                    overflow: hidden;
+                    height: 41.4rem;
+                    width: 100%;
+                    max-width: 41.9rem;
+                    @include flex(row, center, center);
+                    img {
+                        height: 100%;
+                        max-width: unset;
+                        width: auto;
+                    }
                 }
             }
 

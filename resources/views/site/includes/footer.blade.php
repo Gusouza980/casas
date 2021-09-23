@@ -30,10 +30,10 @@
             </div>
             <div class="_col">
                 <div class="_socialmedias">
-                    <a href="https://www.facebook.com/CasasTemporadaAlfenas">
+                    <a target="_blank" href="https://www.facebook.com/CasasTemporadaAlfenas">
                         <img src="{{ asset('site/img/FacebookLogo.svg') }}" alt="Ícone do Facebook" />
                     </a>
-                    <a href="https://www.instagram.com/casas_temporada_alfenas/">
+                    <a target="_blank" href="https://www.instagram.com/casas_temporada_alfenas/">
                         <img src="{{ asset('site/img/InstagramLogo.svg') }}" alt="Ícone do Facebook" />
                     </a>
                     {{-- <a href="/">

@@ -70,3 +70,9 @@ $(".s_details .container-fav ._showcase img").click((e) => {
 $('button[name="toWhats"]').click(() => {
     window.open("https://api.whatsapp.com/send?phone=5535988326287&text=");
 });
+
+$("select[ name='pesquisa-casa']").change(() => {
+    window.location.href = `/detalhe/${$("select[ name='pesquisa-casa']")
+        .find(":selected")
+        .attr("slug")}`;
+});

@@ -18,7 +18,7 @@
                     <div class="_icon">
                         <img src="{{ asset('site/img/pin.svg') }}" alt="Ícone de Pin" />
                     </div>
-                    <p>Rua General Costa Campos, 470 Centro - Alfenas 37130-131</p>
+                    <p>{{ $imovel->subtitulo }}</p>
                 </div>
             </div>
 

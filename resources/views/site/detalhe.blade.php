@@ -1,4 +1,5 @@
 @include('site.includes.head')
+<title>{{ $imovel->nome }}</title>
 
 <body id="details">
     <div class="container-fluid s_details">
@@ -127,14 +128,14 @@
             </div>
             <div class="_cases">
                 @foreach (\App\Models\Imovel::where([['lista', $imovel->lista], ['id', '<>', $imovel->id]])->orderBy('prioridade_lista', 'DESC')->get()
-    as $recomendado)
+                    as $recomendado)
                     <a href="{{ route('site.detalhe', ['slug' => $recomendado->slug]) }}" class="_case">
                         <div class="_img">
                             <img src="{{ asset($recomendado->imagem1) }}" alt="" />
                         </div>
                         <div class="_name">{{ $recomendado->nome }} #{{ $recomendado->codigo }}</div>
                     </a>
-                @endforeach
+                    @endforeach
             </div>
         </div>
     </section>

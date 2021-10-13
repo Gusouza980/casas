@@ -166,11 +166,19 @@ section.s_list {
             overflow-x: scroll;
             width: 100%;
             white-space: nowrap;
+            scroll-snap-type: x mandatory;
             ._case {
                 width: 41.4rem;
                 height: 46.6rem;
                 display: inline-block;
                 margin-right: 2rem;
+
+                @include responsive(600px) {
+                    width: 38rem;
+                    height: 43rem;
+
+                    scroll-snap-align: start;
+                }
 
                 transition: 0.32s;
 

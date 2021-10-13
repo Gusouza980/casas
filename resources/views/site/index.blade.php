@@ -20,9 +20,10 @@
                 <button name="toWhats">Vem com a gente</button>
             </div>
             <div class="_right">
-                <div class="_hero-imgs">
+                <picture class="_hero-imgs">
+                    <source media="(max-width: 465px)" srcset="{{ asset('site/img/header_group_mobile.png') }}">
                     <img src="{{ asset('site/img/header_group.png') }}" alt="" />
-                </div>
+                </picture>
             </div>
         </div>
     </section>
@@ -32,7 +33,8 @@
             <select class="js-example-basic-single" name="pesquisa-casa">
                 <option value="">Encontrar casa</option>
                 @foreach ($imoveis as $imovel)
-                    <option value="{{ $imovel->id }}" slug="{{$imovel->slug}}">{{ $imovel->nome }} #{{ $imovel->codigo }}</option>
+                    <option value="{{ $imovel->id }}" slug="{{ $imovel->slug }}">{{ $imovel->nome }}
+                        #{{ $imovel->codigo }}</option>
                 @endforeach
             </select>
 
@@ -51,35 +53,35 @@
             <div class="_top">
                 <a href="{{ route('site.detalhe', ['slug' => $configuracao->top1_imovel->slug]) }}"
                     class="_fivecase">
-                    <div class="number">1</div>
+                    <div class="number"><img src="{{ asset('/site/img/1 (Stroke).svg') }}" alt=""></div>
                     <div class="_image">
                         <img src="{{ $configuracao->top1_imovel->imagem1 }}" alt="" />
                     </div>
                 </a>
                 <a href="{{ route('site.detalhe', ['slug' => $configuracao->top2_imovel->slug]) }}"
                     class="_fivecase">
-                    <div class="number">2</div>
+                    <div class="number"><img src="{{ asset('/site/img/2 (Stroke).svg') }}" alt=""></div>
                     <div class="_image">
                         <img src="{{ $configuracao->top2_imovel->imagem1 }}" alt="" />
                     </div>
                 </a>
                 <a href="{{ route('site.detalhe', ['slug' => $configuracao->top3_imovel->slug]) }}"
                     class="_fivecase">
-                    <div class="number">3</div>
+                    <div class="number"><img src="{{ asset('/site/img/3 (Stroke).svg') }}" alt=""></div>
                     <div class="_image">
                         <img src="{{ $configuracao->top3_imovel->imagem1 }}" alt="" />
                     </div>
                 </a>
                 <a href="{{ route('site.detalhe', ['slug' => $configuracao->top4_imovel->slug]) }}"
                     class="_fivecase">
-                    <div class="number">4</div>
+                    <div class="number"><img src="{{ asset('/site/img/4 (Stroke).svg') }}" alt=""></div>
                     <div class="_image">
                         <img src="{{ $configuracao->top4_imovel->imagem1 }}" alt="" />
                     </div>
                 </a>
                 <a href="{{ route('site.detalhe', ['slug' => $configuracao->top5_imovel->slug]) }}"
                     class="_fivecase">
-                    <div class="number">5</div>
+                    <div class="number"><img src="{{ asset('/site/img/5 (Stroke).svg') }}" alt=""></div>
                     <div class="_image">
                         <img src="{{ $configuracao->top5_imovel->imagem1 }}" alt="" />
                     </div>

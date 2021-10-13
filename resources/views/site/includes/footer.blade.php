@@ -44,9 +44,7 @@
         </div>
         <div class="_end">
             <p>©2021 - Casas Temporadas - Todos os direitos reservados.</p>
-            <span>Feito por: <a href="/"><img src="{{ asset('site/img/_logoSeven.png') }}" alt="" /></a></span>
+            <span>Feito por: <a href="/"><img src="{{ asset('site/img/_logoDigi7al.png') }}" alt="" /></a></span>
         </div>
     </div>
 </footer>
-
-

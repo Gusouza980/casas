@@ -54,12 +54,12 @@ $(document).ready(() => {
 
 $("._buttons ._next").click(function () {
     var cases = $(this).closest("div.container-fav").find("div._cases");
-    cases.scrollLeft(cases.scrollLeft() + 800);
+    cases.scrollLeft(cases.scrollLeft() + cases.width());
 });
 
 $("._buttons ._back").click(function () {
     var cases = $(this).closest("div.container-fav").find("div._cases");
-    cases.scrollLeft(cases.scrollLeft() - 800);
+    cases.scrollLeft(cases.scrollLeft() - cases.width());
 });
 
 $(".s_details .container-fav ._showcase img").click((e) => {

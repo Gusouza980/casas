@@ -69,6 +69,7 @@ section.s_topfive {
     ._top {
         overflow-x: scroll;
         overflow-y: visible;
+        scroll-snap-type: x mandatory;
         &::-webkit-scrollbar {
             display: none;
         }
@@ -77,6 +78,7 @@ section.s_topfive {
         ._fivecase {
             display: inline-block;
             margin-right: 2rem;
+            scroll-snap-align: start;
             .number {
                 // font-family: "Roboto";
                 display: inline-block;

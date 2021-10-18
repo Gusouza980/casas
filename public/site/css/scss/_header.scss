@@ -13,6 +13,11 @@ header {
                 transform: scale(1.05);
                 filter: drop-shadow(0px 2px 12px green);
             }
+
+            @include responsive(730px) {
+                bottom: 20px;
+                top: unset;
+            }
         }
     }
     @include responsive(730px) {

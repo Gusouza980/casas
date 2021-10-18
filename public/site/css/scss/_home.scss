@@ -4,6 +4,11 @@ body {
         background-position: center 0;
         background-size: cover;
         background-repeat: no-repeat;
+
+        @include responsive(600px) {
+            background-image: url("../img/mobilebanner.png");
+            background-size: 100% auto;
+        }
     }
 }
 
@@ -40,11 +45,11 @@ section.s-hero {
         }
         ._right {
             top: 4rem;
-            right: -3rem;
-            max-width: 40rem;
             @include flex(row, center, center);
             ._hero-imgs {
                 animation: none;
+
+                display: none;
 
                 img {
                     border-radius: 12px;

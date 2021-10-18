@@ -32,15 +32,26 @@
 
     <section class="container-fluid searchbar">
         <div class="container-fav">
-            <select class="js-example-basic-single" name="pesquisa-casa">
+            {{-- <select class="js-example-basic-single" name="pesquisa-casa">
                 <option value="">Encontrar casa</option>
                 @foreach ($imoveis as $imovel)
                 <option value="{{ $imovel->id }}" slug="{{ $imovel->slug }}">{{ $imovel->nome }}
                     #{{ $imovel->codigo }}</option>
                 @endforeach
-            </select>
+            </select> --}}
 
-            <picture for="pesquisa-casa">
+            <input type="text" style="
+            height: 100%;
+            width: 100%;
+            background: #e5e5e5;
+            border-radius: 23px;
+            text-align: center;
+            font-weight: bold;
+            color: #3D677E;" name="pesquisa-casa" placeholder="Encontrar casa">
+
+
+
+            <picture onclick="searchCasa()" for="pesquisa-casa">
                 <img src="{{ asset('site/img/search.svg') }}" alt="">
             </picture>
         </div>
@@ -283,7 +294,24 @@
         <script src="{{ asset('site/js/jquery-ui.js') }}"></script>
 
         <script src="{{ asset('site/js/main.js') }}"></script>
-        <script src="{{ asset('admin/libs/select2/js/select2.min.js') }}"></script>
+        {{-- <script src="{{ asset('admin/libs/select2/js/select2.min.js') }}"></script> --}}
+
+        <script>
+            var imoveis = new Array();
+
+            @foreach ($imoveis as $imovel)
+                imoveis.push({!! $imovel !!})
+            @endforeach
+
+            function searchCasa(){
+                var id = $('input[name=pesquisa-casa]').val();
+                var imovel = imoveis.find(element => element.codigo == id);
+
+                window.location.href = `/detalhe/${imovel.slug}`;
+            }
+            
+        </script>
+
 </body>
 
 </html>

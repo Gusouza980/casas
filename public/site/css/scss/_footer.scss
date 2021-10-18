@@ -58,6 +58,7 @@ footer {
             }
             img {
                 transition: 0.32s;
+                height: 3rem;
 
                 &:hover {
                     transform: scale(1.05);
@@ -86,7 +87,7 @@ footer {
                 flex-direction: column;
                 gap: 2rem;
 
-                span{
+                span {
                     display: flex;
                     flex-direction: column;
                 }

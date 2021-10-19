@@ -46,12 +46,13 @@
             background: #e5e5e5;
             border-radius: 23px;
             text-align: center;
+            font-size: 24px;
             font-weight: bold;
             color: #3D677E;" name="pesquisa-casa" placeholder="Encontrar casa">
 
 
 
-            <picture onclick="searchCasa()" for="pesquisa-casa">
+            <picture onclick="tryCatch()" for="pesquisa-casa">
                 <img src="{{ asset('site/img/search.svg') }}" alt="">
             </picture>
         </div>
@@ -303,11 +304,29 @@
                 imoveis.push({!! $imovel !!})
             @endforeach
 
-            function searchCasa(){
-                var id = $('input[name=pesquisa-casa]').val();
-                var imovel = imoveis.find(element => element.codigo == id);
+            $('input[name=pesquisa-casa]').focus(() => {
+                $('input[name=pesquisa-casa]').val('');
+            })
 
-                window.location.href = `/detalhe/${imovel.slug}`;
+            function searchCasa(){
+                    var id = $('input[name=pesquisa-casa]').val();
+                    var imovel = imoveis.find(element => element.codigo == id);
+
+                    window.location.href = `/detalhe/${imovel.slug}`;
+    
+                
+            }
+            
+
+            var tryCatch = () =>{
+                try {
+                    searchCasa()
+                }
+                catch (e) {
+                    $('input[name=pesquisa-casa]').val('Casa não encontrada');
+
+                }
+                
             }
             
         </script>

@@ -56,6 +56,10 @@
                 height: 48.8rem;
                 overflow: hidden;
                 border-radius: 20px 0 0 20px;
+
+                img {
+                    height: 100%;
+                }
             }
             ._othersPic {
                 @include flex(row, center, center);

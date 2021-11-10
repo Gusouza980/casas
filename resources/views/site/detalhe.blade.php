@@ -1,5 +1,5 @@
 @include('site.includes.head')
-<title>{{ $imovel->nome }}</title>
+<title>{{ $imovel->nome }} - Casas Temporada Brasil</title>
 
 <body id="details">
     <div class="container-fluid s_details">
@@ -99,7 +99,7 @@
                         </div>
                         <span>Raphael Augusto<br> de Lima Barbosa</span>
                         <p>Converse aqui para marcar e negociar o valor.</p>
-                        <span class="_crc"><strong>CRC:</strong> 123124124-214</span>
+                        {{-- <span class="_crc"><strong>CRC:</strong> 123124124-214</span> --}}
 
                         <button name="toWhats   ">
                             Tenho interesse
@@ -112,6 +112,27 @@
             </main>
         </div>
     </div>
+
+
+    <section class="fullscreen-image">
+        <div>
+            <button><img src="{{ asset('site/img/halfarrowleft.svg') }}" alt="Seta indicando a esquerda" /></button>
+            <button><img src="{{ asset('site/img/halfarrowright.svg') }}" alt="Seta indicando a direita" /> </button>
+        </div>
+        <picture>
+            <img src="{{ asset('site/img/galeria_Pic (1).jpg')}} " alt="">
+        </picture>
+
+        <span></span>
+    </section>
+
+
+    <section class="container-fluid s_propaganda">
+        <div class="container-fav">
+            <picture><img src="{{ asset('site/img/publi_paladar.png')}}" alt="Publicidade Paladar"></picture>
+            <picture><img src="{{ asset('site/img/publi_teixeira.png')}}" alt="Publicidade Paladar"></picture>
+        </div>
+    </section>
 
     <section class="container-fluid s_list gray">
         <div class="container-fav">

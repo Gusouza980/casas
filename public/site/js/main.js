@@ -62,10 +62,10 @@ $("._buttons ._back").click(function () {
     cases.scrollLeft(cases.scrollLeft() - cases.width());
 });
 
-$(".s_details .container-fav ._showcase img").click((e) => {
-    if (document.fullscreenElement == null) e.target.requestFullscreen();
-    else document.exitFullscreen();
-});
+// $(".s_details .container-fav ._showcase img").click((e) => {
+//     if (document.fullscreenElement == null) e.target.requestFullscreen();
+//     else document.exitFullscreen();
+// });
 
 $('button[name="toWhats"]').click(() => {
     window.open("https://api.whatsapp.com/send?phone=5535988326287&text=");
@@ -76,3 +76,47 @@ $("select[ name='pesquisa-casa']").change(() => {
         .find(":selected")
         .attr("slug")}`;
 });
+
+
+var gallery_images = $('.s_details .container-fav ._showcase img');
+var imageindex;
+
+function getImage(image) {
+    $('.fullscreen-image').toggleClass("showed")
+    $('.fullscreen-image picture img').attr('src', $(image).attr('src'));
+
+    imageindex = $(image).closest('div._picture').index();
+    console.log(imageindex)
+}
+
+
+
+
+
+
+$(".fullscreen-image span").click(function() {
+    $('.fullscreen-image').toggleClass("showed")
+})
+
+$(".s_details .container-fav ._showcase img").click(function() {
+    getImage(this)
+})
+
+$(".fullscreen-image div button:nth-child(2)").click(() => {
+    if(imageindex >= gallery_images.length - 1) return false;
+
+    imageindex++;
+    var source =  gallery_images[imageindex];
+
+
+    $('.fullscreen-image picture img').attr('src', source.src);
+})
+$(".fullscreen-image div button:first-child").click(() => {
+    if(imageindex <= 0) return false;
+
+    imageindex--;
+    var source =  gallery_images[imageindex];
+
+    
+    $('.fullscreen-image picture img').attr('src', source.src);
+})

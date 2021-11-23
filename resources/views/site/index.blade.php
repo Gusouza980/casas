@@ -1,6 +1,6 @@
 @include('site.includes.head')
 
-<title>Casas Temporada Brasil - A casa ideal para seu event</title>
+<title>Casas Temporada Brasil - A casa ideal para seu evento</title>
 
 <body class="home">
     <header class="container-fluid">

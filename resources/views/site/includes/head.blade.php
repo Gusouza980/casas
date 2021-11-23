@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Casas Temporada Brasil" />
-    <meta name="keywords" content="---------------------" />
-    <meta name="author" content="Everaldo Cristiano Reis Júnior" />
+    <meta name="description" content="Casas Temporada Brasil - A casa ideal para seu evento" />
+    <meta name="keywords" content="Acasa ideal para seu evento, está aqui!" />
+    <meta name="author" content="DIGI7AL & hyp8" />
 
-    <meta property="og:title" content="Casas Temporada Bras8o" />
+    <meta property="og:title" content="Casas Temporada Brasil - A casa ideal para seu evento" />
     <meta property="og:url" content="https://casastemporadabrasil.com.br" />
-    <meta property="og:description" content="---------------------" />
+    <meta property="og:description" content="Acasa ideal para seu evento, está aqui!" />
     <meta property="og:image" content="{{ asset('site/img/_og140.jpg') }}" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />

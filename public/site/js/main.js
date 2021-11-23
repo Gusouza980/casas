@@ -67,10 +67,6 @@ $("._buttons ._back").click(function () {
 //     else document.exitFullscreen();
 // });
 
-$('button[name="toWhats"]').click(() => {
-    window.open("https://api.whatsapp.com/send?phone=5535988326287&text=");
-});
-
 $("select[ name='pesquisa-casa']").change(() => {
     window.location.href = `/detalhe/${$("select[ name='pesquisa-casa']")
         .find(":selected")

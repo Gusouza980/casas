@@ -135,18 +135,14 @@
                     <div class="_icon">
                         <img src="{{ asset('site/img/icon_door.svg') }}" alt="Ícone de porta" />
                     </div>
-                    <span>Não apenas alugue, cire histórias!</span>
+                    <span>Não apenas alugue, crie histórias!</span>
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. <br /><br />
-
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                    cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                    anim id est laborum.
+                    Disponibilizamos imóveis para temporada diferenciados, aliados a um atendimento totalmente personalizado que garantem uma estadia confortável e especial.
+                    <br>
+                    <br>
+                    Nós proporcionamos muito mais que apenas uma locação de imóvel, nossa experiência proporciona todo cuidado que você merece, garantindo que terá uma ótima experiência em qualquer um
+                    dos nossos espaços, nos quais zelamos pela limpeza, conforto e segurança!
                 </p>
                 <button>Buscar</button>
             </div>

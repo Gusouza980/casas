@@ -26,4 +26,14 @@
     <link rel="stylesheet" href="{{ asset('admin/libs/select2/css/select2.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('site/css/style.css') }}" />
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-70M5NVCDX0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-70M5NVCDX0');
+    </script>
+
+
 </head>

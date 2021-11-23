@@ -101,7 +101,7 @@
                         <p>Converse aqui para marcar e negociar o valor.</p>
                         {{-- <span class="_crc"><strong>CRC:</strong> 123124124-214</span> --}}
 
-                        <button name="toWhats   ">
+                        <button name="toWhats">
                             Tenho interesse
                             <div class="_icon">
                                 <img src="{{ asset('site/img/whatsapp_white.svg') }}" alt="" />
@@ -168,6 +168,13 @@
     <script src="{{ asset('site/js/jquery-ui.js') }}"></script>
 
     <script src="{{ asset('site/js/main.js') }}"></script>
+
+
+    <script>
+        $('button[name="toWhats"]').click(()  => {
+            window.open(`https://wa.me/5535988326287/?text=Oi+tenho+interesse+na+casa+numero+{{ $imovel->codigo }}`)
+        })
+    </script>
 </body>
 
 </html>

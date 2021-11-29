@@ -16,11 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\SiteController::class, 'index'])->name("site.index");
 Route::get('/detalhe/{slug}', [\App\Http\Controllers\SiteController::class, 'detalhe'])->name("site.detalhe");
 
+Route::get('/sistema', [\App\Http\Controllers\PainelController::class, 'index'])->name("painel.index");
+
 Route::get('/sistema/login', [\App\Http\Controllers\PainelController::class, 'login'])->name("painel.login");
 Route::post('/sistema/logar', [\App\Http\Controllers\PainelController::class, 'logar'])->name("painel.logar");
 
 Route::middleware(['admin'])->group(function () {
-    Route::get('/sistema/inicio', [\App\Http\Controllers\PainelController::class, 'index'])->name("painel.index");
+    // Route::get('/sistema/inicio', [\App\Http\Controllers\PainelController::class, 'index'])->name("painel.index");
     Route::get('/sistema/sair', [\App\Http\Controllers\PainelController::class, 'sair'])->name("painel.sair");
 
     // ROTAS DE USUARIOS
@@ -37,6 +39,12 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/sistema/imoveis/editar/{imovel}', [\App\Http\Controllers\ImoveisController::class, 'editar'])->name("painel.imoveis.editar");
     Route::post('/sistema/imoveis/salvar/{imovel}', [\App\Http\Controllers\ImoveisController::class, 'salvar'])->name("painel.imoveis.salvar");
     Route::post('/sistema/imoveis/top/{imovel}', [\App\Http\Controllers\ImoveisController::class, 'top'])->name("painel.imoveis.top");
+
+    Route::post('/sistema/imoveis/salvar_imagem/{imovel}', [\App\Http\Controllers\ImoveisController::class, 'salvar_imagem'])->name("painel.imoveis.imagens.salvar");
+
+    Route::get('/sistema/imoveis/imagens/{imovel}', [\App\Http\Controllers\ImoveisController::class, 'consultar_imagem'])->name("painel.imoveis.imagens");
+
+    Route::get('/sistema/imoveis/imagens_deletar/{imagem}', [\App\Http\Controllers\ImoveisController::class, 'deletar_imagem'])->name("painel.imoveis.imagens.deletar");
 
     // ROTA DE LOG
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

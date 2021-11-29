@@ -5,11 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Imovel extends Model
+class ImovelImagem extends Model
 {
     use HasFactory;
-
-    public function imagens(){
-        return $this->hasMany(ImovelImagem::class);
-    }
 }

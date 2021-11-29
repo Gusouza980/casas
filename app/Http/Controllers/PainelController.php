@@ -12,7 +12,11 @@ class PainelController extends Controller
 {
     //
     public function index(){
-        return view("painel.index");
+        if(session()->get("usuario")){
+            return redirect()->route("painel.usuarios");
+        } else {
+            return redirect()->route("painel.login");
+        }
     }
 
     public function login(){

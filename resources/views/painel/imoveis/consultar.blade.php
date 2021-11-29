@@ -47,6 +47,11 @@
                                                     <i class="bx bx-edit-alt"></i> Editar
                                                 </a>
                                                 <a class="dropdown-item py-3"
+                                                    href="{{ route('painel.imoveis.imagens', ['imovel' => $imovel]) }}"
+                                                    role="button">
+                                                    <i class="bx bx-image-alt"></i> Imagens
+                                                </a>
+                                                <a class="dropdown-item py-3"
                                                     href="{{ route('painel.imoveis.editar', ['imovel' => $imovel]) }}"
                                                     role="button" data-bs-toggle="modal"
                                                     data-bs-target="#modalDefineTop{{ $imovel->id }}">

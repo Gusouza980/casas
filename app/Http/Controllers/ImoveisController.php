@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Imovel;
+use App\Models\ImovelImagem;
 use App\Models\Configuracao;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -124,6 +125,37 @@ class ImoveisController extends Controller
         return view("painel.imoveis.editar", ["imovel" => $imovel]);
     }
 
+    public function consultar_imagem(Imovel $imovel){
+        $imagens = $imovel->imagens;
+        return view("painel.imoveis.consultar_imagem", ["imagens" => $imagens]);
+    }
+
+    public function deletar_imagem(ImovelImagem $imagem) {
+        Storage::delete($imagem->imagem);
+
+        $imagem->delete();
+        toastr()->success("Imagem removida com sucesso!");
+        return redirect()->back();
+    }
+
+    public function salvar_imagem(Request $request, Imovel $imovel) {
+
+        // UPLOAD DE IMAGENS
+        $imagem = new ImovelImagem;
+        $imagem->imovel_id = $imovel->id;
+        if($request->file("imagem")){
+            $imagem->imagem = $request->file('imagem')->store(
+                'site/imagens/imoveis/' . $imovel->codigo, 'local'
+            );
+        }
+
+        $imagem->save();
+
+        toastr()->success("Imagem salva com sucesso!");
+
+        return redirect()->route("painel.imoveis.imagens", ["imovel" => $imovel]);
+    }
+
     public function salvar(Request $request, Imovel $imovel){
         $request->validate([
             'nome' => 'unique:imovels,nome,'.$imovel->id,
@@ -148,41 +180,6 @@ class ImoveisController extends Controller
         }
         else{
             $imovel->prioridade_lista = false;
-        }
-        // UPLOAD DE IMAGENS
-        if($request->file("imagem1")){
-            Storage::delete($imovel->imagem1);
-            $imovel->imagem1 = $request->file('imagem1')->store(
-                'site/imagens/imoveis/' . $imovel->codigo, 'local'
-            );
-        }
-
-        if($request->file("imagem2")){
-            Storage::delete($imovel->imagem2);
-            $imovel->imagem2 = $request->file('imagem2')->store(
-                'site/imagens/imoveis/' . $imovel->codigo, 'local'
-            );
-        }
-
-        if($request->file("imagem3")){
-            Storage::delete($imovel->imagem3);
-            $imovel->imagem3 = $request->file('imagem3')->store(
-                'site/imagens/imoveis/' . $imovel->codigo, 'local'
-            );
-        }
-
-        if($request->file("imagem4")){
-            Storage::delete($imovel->imagem4);
-            $imovel->imagem4 = $request->file('imagem4')->store(
-                'site/imagens/imoveis/' . $imovel->codigo, 'local'
-            );
-        }
-
-        if($request->file("imagem5")){
-            Storage::delete($imovel->imagem5);
-            $imovel->imagem5 = $request->file('imagem5')->store(
-                'site/imagens/imoveis/' . $imovel->codigo, 'local'
-            );
         }
 
         // SALVANDO IMAGENS DO EDITOR DE TEXTO

@@ -118,6 +118,6 @@ $(".fullscreen-image div button:first-child").click(() => {
 })
 
 
-$(".fullscreen-image div button:nth-child(2)").click(() => {
+$(".fullscreen-image button.close").click(() => {
     $('.fullscreen-image').toggleClass("showed")
 })

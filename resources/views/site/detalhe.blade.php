@@ -1,5 +1,5 @@
 @include('site.includes.head')
-<title>{{ $imovel->nome }} - Casas Temporada Brasil</title>
+<title>{{ $imovel->nome }} - Casas Temporada Alfenas</title>
 
 <body id="details">
     <div class="container-fluid s_details">

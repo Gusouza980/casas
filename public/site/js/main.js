@@ -98,7 +98,7 @@ $(".s_details .container-fav ._showcase img").click(function() {
     getImage(this)
 })
 
-$(".fullscreen-image div button:nth-child(2)").click(() => {
+$(".fullscreen-image div button:last-child").click(() => {
     if(imageindex >= gallery_images.length - 1) return false;
 
     imageindex++;
@@ -115,4 +115,9 @@ $(".fullscreen-image div button:first-child").click(() => {
 
     
     $('.fullscreen-image picture img').attr('src', source.src);
+})
+
+
+$(".fullscreen-image button.close").click(() => {
+    $('.fullscreen-image').toggleClass("showed")
 })

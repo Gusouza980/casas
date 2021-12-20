@@ -1,6 +1,6 @@
 @include('site.includes.head')
 
-<title>Casas Temporada Brasil - A casa ideal para seu evento</title>
+<title>Casas Temporada Alfenas - A casa ideal para seu evento</title>
 
 <body class="home">
     <header class="container-fluid">
@@ -59,7 +59,7 @@
     </section>
 
 
-    <section class="container-fluid s_topfive">
+    {{-- <section class="container-fluid s_topfive">
         <div class="container-fav">
             <div class="_title">
                 <h2>As 5 mais alugadas</h2>
@@ -97,7 +97,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="container-fluid s_list">
         <div class="container-fav">
@@ -121,30 +121,6 @@
                     <div class="_name">{{ $imovel->nome }} #{{ $imovel->codigo }}</div>
                 </a>
                 @endforeach
-            </div>
-        </div>
-    </section>
-
-    <section class="container-fluid s_create">
-        <div class="container-fav">
-            <div class="_ilustration">
-                <img src="{{ asset('site/img/ilustration.png') }}" alt="Desenho pessoa procurando casa" />
-            </div>
-            <div class="_text">
-                <div class="_title">
-                    <div class="_icon">
-                        <img src="{{ asset('site/img/icon_door.svg') }}" alt="Ícone de porta" />
-                    </div>
-                    <span>Não apenas alugue, crie histórias!</span>
-                </div>
-                <p>
-                    Disponibilizamos imóveis para temporada diferenciados, aliados a um atendimento totalmente personalizado que garantem uma estadia confortável e especial.
-                    <br>
-                    <br>
-                    Nós proporcionamos muito mais que apenas uma locação de imóvel, nossa experiência proporciona todo cuidado que você merece, garantindo que terá uma ótima experiência em qualquer um
-                    dos nossos espaços, nos quais zelamos pela limpeza, conforto e segurança!
-                </p>
-                <button>Buscar</button>
             </div>
         </div>
     </section>
@@ -284,6 +260,35 @@
             </div>
         </section> --}}
 
+
+        <section class="container-fluid s_create">
+            <div class="container-fav">
+                <div class="_ilustration">
+                    <img src="{{ asset('site/img/ilustration.png') }}" alt="Desenho pessoa procurando casa" />
+                </div>
+                <div class="_text">
+                    <div class="_title">
+                        <div class="_icon">
+                            <img src="{{ asset('site/img/icon_door.svg') }}" alt="Ícone de porta" />
+                        </div>
+                        <span>Não apenas alugue, crie histórias!</span>
+                    </div>
+                    <p>
+                        Disponibilizamos imóveis para temporada diferenciados, aliados a um atendimento totalmente personalizado que garantem uma estadia confortável e especial.
+                        <br>
+                        <br>
+                        Nós proporcionamos muito mais que apenas uma locação de imóvel, nossa experiência proporciona todo cuidado que você merece, garantindo que terá uma ótima experiência em
+                        qualquer um
+                        dos nossos espaços, nos quais zelamos pela limpeza, conforto e segurança!
+                    </p>
+                    <button>Buscar</button>
+                </div>
+            </div>
+        </section>
+
+
+
+
         @include('site.includes.footer')
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js "></script>
@@ -326,6 +331,9 @@
             }
             
         </script>
+
+
+
 
 </body>
 
